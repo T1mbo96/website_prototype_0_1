@@ -119,8 +119,8 @@ class SearchQuery(models.Model):
         ('TH', 'Thüringen'),
     )
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='user_id')
-    state = models.CharField(max_length=2, choices=STATES)
+    state = models.CharField(max_length=2, choices=STATES, default='BW')
     place = models.CharField(max_length=30)
-    zip = models.IntegerField(default=0000)
+    zip = models.IntegerField()
     street = models.CharField(max_length=100)
     house_number = models.CharField(max_length=10)

@@ -1,5 +1,3 @@
-import datetime
-
 from django.shortcuts import render, redirect
 from .forms import SearchForm
 
@@ -18,4 +16,5 @@ def index(request):
 
 
 def search_result(request):
+    print(request.GET)
     return render(request, 'Website_0_1/Unauthenticated/search_result.html')
