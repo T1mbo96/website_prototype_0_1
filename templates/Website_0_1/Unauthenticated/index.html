@@ -17,49 +17,10 @@
 <header>
 </header>
 <div class="container">
-    <form>
-        <div class="form-group">
-            <label for="sel1">Bundesland</label>
-            <select class="form-control" id="sel1">
-                <option>Baden-Württemberg</option>
-                <option>Bayern</option>
-                <option>Berlin</option>
-                <option>Brandenburg</option>
-                <option>Bremen</option>
-                <option>Hamburg</option>
-                <option>Hessen</option>
-                <option>Mecklenburg-Vorpommern</option>
-                <option>Niedersachsen</option>
-                <option>Nordrhein-Westfalen</option>
-                <option>Rheinland-Pfalz</option>
-                <option>Saarland</option>
-                <option>Sachsen</option>
-                <option>Sachsen-Anhalt</option>
-                <option>Schleswig-Holstein</option>
-                <option>Thüringen</option>
-            </select>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputPlace">Ort</label>
-                <input type="text" class="form-control" id="inputPlace" placeholder="Ort">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPLZ">Postleitzahl</label>
-                <input type="number" class="form-control" id="inputPLZ" placeholder="Postleitzahl">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="inputStreet">Straße</label>
-                <input type="text" class="form-control" id="inputStreet" placeholder="Straße">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputHouseNumber">Hausnummer</label>
-                <input type="text" class="form-control" id="inputHouseNumber" placeholder="Hausnummer">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Suche</button>
+    <h2>New post</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
     </form>
 </div>
 </body>

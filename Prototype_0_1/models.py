@@ -97,3 +97,30 @@ class Rating(models.Model):
 class Comment(models.Model):
     text = models.TextField(max_length=250)
     rating_id = models.ForeignKey(Rating, on_delete=models.CASCADE, verbose_name="rating id")
+
+
+class SearchQuery(models.Model):
+    STATES = (
+        ('BW', 'Baden-Württemberg'),
+        ('BY', 'Bayern'),
+        ('BE', 'Berlin'),
+        ('BB', 'Brandenburg'),
+        ('HB', 'Bremen'),
+        ('HH', 'Hamburg'),
+        ('HE', 'Hessen'),
+        ('MV', 'Mecklenburg-Vorpommern'),
+        ('NI', 'Niedersachsen'),
+        ('NW', 'Nordrhein-Westfalen'),
+        ('RP', 'Rheinland-Pfalz'),
+        ('SL', 'Saarland'),
+        ('SN', 'Sachsen'),
+        ('ST', 'Sachsen-Anhalt'),
+        ('SH', 'Schleswig-Holstein'),
+        ('TH', 'Thüringen'),
+    )
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='user_id')
+    state = models.CharField(max_length=2, choices=STATES)
+    place = models.CharField(max_length=30)
+    zip = models.IntegerField(default=0000)
+    street = models.CharField(max_length=100)
+    house_number = models.CharField(max_length=10)
