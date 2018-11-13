@@ -124,3 +124,34 @@ class SearchQuery(models.Model):
     zip = models.IntegerField()
     street = models.CharField(max_length=100)
     house_number = models.CharField(max_length=10)
+
+
+class Locations(models.Model):
+    STATES = (
+        ('BW', 'Baden-Württemberg'),
+        ('BY', 'Bayern'),
+        ('BE', 'Berlin'),
+        ('BB', 'Brandenburg'),
+        ('HB', 'Bremen'),
+        ('HH', 'Hamburg'),
+        ('HE', 'Hessen'),
+        ('MV', 'Mecklenburg-Vorpommern'),
+        ('NI', 'Niedersachsen'),
+        ('NW', 'Nordrhein-Westfalen'),
+        ('RP', 'Rheinland-Pfalz'),
+        ('SL', 'Saarland'),
+        ('SN', 'Sachsen'),
+        ('ST', 'Sachsen-Anhalt'),
+        ('SH', 'Schleswig-Holstein'),
+        ('TH', 'Thüringen'),
+    )
+    state = models.CharField(max_length=2, choices=STATES, default='BW')
+    place = models.CharField(max_length=30)
+    zip = models.IntegerField()
+    street = models.CharField(max_length=100)
+    house_number = models.CharField(max_length=10)
+
+
+class Availability(models.Model):
+    location = models.ForeignKey(Locations, on_delete=models.CASCADE, verbose_name='location_id')
+    contract = models.ForeignKey(Contract, on_delete=models.CASCADE, verbose_name='contract_id')
