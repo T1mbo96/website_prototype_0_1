@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <settings>
+    <info color="4c3ceb">
+      <option name="BACKGROUND" value="1a42f6" />
+      <option name="ERROR_STRIPE_COLOR" value="4c3ceb" />
+      <option name="myName" value="pep8warning" />
+      <option name="myVal" value="50" />
+      <option name="myExternalName" value="pep8warning" />
+      <option name="myDefaultAttributes">
+        <option name="ERROR_STRIPE_COLOR" value="4c3ceb" />
+      </option>
+    </info>
+  </settings>
+</component>

@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^Suchergebnis/$', views.search_result, name='search_result'),
+    url(r'^Suchergebnis/(?P<data>.*)$',
+        views.search_result, name='search_result'),
 ]
