@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'website_prototype_0_1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_prototype',
-        'USER': 'adrian',
+        'NAME': 'website_project',
+        'USER': 'timom',
         'PASSWORD': '123456',
         'HOST': '',
         'PORT': '',

@@ -4,6 +4,7 @@ import ast
 from .models import Contract, Price, Provider, Locations, Availability
 
 
+
 def index(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
@@ -26,15 +27,13 @@ def index(request):
 
 
 def search_result(request, data):
-    # print(request.GET)
     data_dict = ast.literal_eval(data)
-    print(data_dict.get('state'))
+
     location_list = Locations.objects.filter(zip=data_dict.get('zip')).filter(street=data_dict.get('street')).filter(
         house_number=data_dict.get('house_number')).values()
-    for location in location_list:
-        print(location)
-    # location_list.filter(street=data_dict.get('street')).values()
-    # location_list.filter(house_number=data_dict.get('house_number')).values()
-
 
     return render(request, 'Website_0_1/Unauthenticated/search_result.html')
+
+
+def profile(request):
+    return render(request, 'Website_0_1/Unauthenticated/profile.html')
