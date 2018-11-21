@@ -4,10 +4,11 @@ import ast
 from .models import Contract, Price, Provider, Locations, Availability
 
 
-
 def index(request):
     if request.method == "POST":
         form = SearchForm(request.POST)
+
+        print(request.user)
 
         if form.is_valid():
             form_data = {}
@@ -22,7 +23,9 @@ def index(request):
                 print(data)
             return redirect('search_result', data=form_data)
     else:
+        print("isinelse")
         form = SearchForm()
+    print("beforeend")
     return render(request, 'Website_0_1/Unauthenticated/index.html', {'form': form})
 
 

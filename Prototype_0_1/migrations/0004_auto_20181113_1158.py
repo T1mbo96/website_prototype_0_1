@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('Prototype_0_1', '0003_searchquery_zip'),
     ]
@@ -15,14 +14,20 @@ class Migration(migrations.Migration):
             name='Availability',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('contract', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Prototype_0_1.Contract', verbose_name='contract_id')),
+                ('contract', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Prototype_0_1.Contract',
+                                               verbose_name='contract_id')),
             ],
         ),
         migrations.CreateModel(
             name='Locations',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('state', models.CharField(choices=[('BW', 'Baden-Württemberg'), ('BY', 'Bayern'), ('BE', 'Berlin'), ('BB', 'Brandenburg'), ('HB', 'Bremen'), ('HH', 'Hamburg'), ('HE', 'Hessen'), ('MV', 'Mecklenburg-Vorpommern'), ('NI', 'Niedersachsen'), ('NW', 'Nordrhein-Westfalen'), ('RP', 'Rheinland-Pfalz'), ('SL', 'Saarland'), ('SN', 'Sachsen'), ('ST', 'Sachsen-Anhalt'), ('SH', 'Schleswig-Holstein'), ('TH', 'Thüringen')], default='BW', max_length=2)),
+                ('state', models.CharField(
+                    choices=[('BW', 'Baden-Württemberg'), ('BY', 'Bayern'), ('BE', 'Berlin'), ('BB', 'Brandenburg'),
+                             ('HB', 'Bremen'), ('HH', 'Hamburg'), ('HE', 'Hessen'), ('MV', 'Mecklenburg-Vorpommern'),
+                             ('NI', 'Niedersachsen'), ('NW', 'Nordrhein-Westfalen'), ('RP', 'Rheinland-Pfalz'),
+                             ('SL', 'Saarland'), ('SN', 'Sachsen'), ('ST', 'Sachsen-Anhalt'),
+                             ('SH', 'Schleswig-Holstein'), ('TH', 'Thüringen')], default='BW', max_length=2)),
                 ('place', models.CharField(max_length=30)),
                 ('zip', models.IntegerField()),
                 ('street', models.CharField(max_length=100)),
@@ -32,7 +37,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='searchquery',
             name='state',
-            field=models.CharField(choices=[('BW', 'Baden-Württemberg'), ('BY', 'Bayern'), ('BE', 'Berlin'), ('BB', 'Brandenburg'), ('HB', 'Bremen'), ('HH', 'Hamburg'), ('HE', 'Hessen'), ('MV', 'Mecklenburg-Vorpommern'), ('NI', 'Niedersachsen'), ('NW', 'Nordrhein-Westfalen'), ('RP', 'Rheinland-Pfalz'), ('SL', 'Saarland'), ('SN', 'Sachsen'), ('ST', 'Sachsen-Anhalt'), ('SH', 'Schleswig-Holstein'), ('TH', 'Thüringen')], default='BW', max_length=2),
+            field=models.CharField(
+                choices=[('BW', 'Baden-Württemberg'), ('BY', 'Bayern'), ('BE', 'Berlin'), ('BB', 'Brandenburg'),
+                         ('HB', 'Bremen'), ('HH', 'Hamburg'), ('HE', 'Hessen'), ('MV', 'Mecklenburg-Vorpommern'),
+                         ('NI', 'Niedersachsen'), ('NW', 'Nordrhein-Westfalen'), ('RP', 'Rheinland-Pfalz'),
+                         ('SL', 'Saarland'), ('SN', 'Sachsen'), ('ST', 'Sachsen-Anhalt'), ('SH', 'Schleswig-Holstein'),
+                         ('TH', 'Thüringen')], default='BW', max_length=2),
         ),
         migrations.AlterField(
             model_name='searchquery',
@@ -42,6 +52,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='availability',
             name='location',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Prototype_0_1.Locations', verbose_name='location_id'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Prototype_0_1.Locations',
+                                    verbose_name='location_id'),
         ),
     ]
