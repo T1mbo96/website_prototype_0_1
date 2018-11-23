@@ -1,3 +1,11 @@
 .hidden_content {
     display: none;
 }
+
+#registration {
+    margin-right: 5px;
+}
+
+#login {
+    margin-right: 5px;
+}
