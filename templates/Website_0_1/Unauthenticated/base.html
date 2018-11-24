@@ -41,11 +41,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item {% block home_active %}{% endblock home_active %}">
                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">Profil</a>
+                    <a class="nav-link {% block profile_active %}{% endblock profile_active %}" href="{% url 'profile' %}">Profil</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -82,8 +82,8 @@
 </div>
 </body>
 <footer class="page-footer font-small blue pt-4">
-    <div class="container" id="footer-content">
-        <div class="container-fluid text-center text-md-left">
+    <div id="footer-content">
+        <div class="container container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
                     <h5 class="text-uppercase">Footer Content</h5>
